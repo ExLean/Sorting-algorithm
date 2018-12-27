@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+void Rikiavimas(int A[], int a);
+
+int main()
+{
+    int M[]={0, 5, 3, 2, 1, 4}, n=6;
+    Rikiavimas(M, n);
+    for (int i=0; i<n; i++)
+    {
+        cout << M[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
+
+void Rikiavimas(int A[], int a)
+{
+    int minind, t;
+    for (int i=0; i<n-1; i++)
+    {
+        minind = i;
+        for (int p=i+1; p<n; p++)
+        {
+            if(A[p] < A[minind]) minind = p;
+        }
+        t = A[minind];
+        A[minind] = A[i];
+        A[i] = t;
+    }
+}
